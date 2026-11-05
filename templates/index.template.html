@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- GENERATED FILE - DO NOT EDIT BY HAND.
+     Edit templates/index.template.html and data/repair-directory.json, then run: node build.js -->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free DIY Repair Directory - Official sources, no affiliate links</title>
+<meta name="description" content="A directory of official, genuinely free DIY-repair resources for appliances, tech, cars and clothes - with the proof it is free stated on every card.">
+<style>
+:root {
+  --ink: #2b3138;
+  --muted: #5d6a75;
+  --bg: #faf8f4;
+  --card-bg: #ffffff;
+  --accent: #2f6b4f;
+  --accent-soft: #e3efe7;
+  --line: #e4e0d8;
+  --warn: #a3541f;
+  --warn-soft: #fdf1e4;
+  --safe: #eaf3ee;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.55;
+  font-size: 16px;
+}
+header.site { border-bottom: 1px solid var(--line); padding: 2.4rem 1.2rem 1.6rem; max-width: 1080px; margin: 0 auto; }
+header.site h1 { margin: 0 0 .3rem; font-size: clamp(1.6rem, 4vw, 2.3rem); line-height: 1.2; }
+header.site p.tagline { margin: 0 0 .8rem; color: var(--muted); max-width: 60ch; }
+.meta-line { font-size: .85rem; color: var(--muted); }
+.meta-line strong { color: var(--ink); }
+main { max-width: 1080px; margin: 0 auto; padding: 1.2rem 1.2rem 3rem; }
+
+.filters { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin: 1rem 0 .4rem; }
+.chip {
+  border: 1px solid var(--line);
+  background: var(--card-bg);
+  border-radius: 999px;
+  padding: .4rem .95rem;
+  font-size: .92rem;
+  cursor: pointer;
+  color: var(--ink);
+  transition: background .12s ease, border-color .12s ease;
+}
+.chip:hover { border-color: var(--accent); }
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+.chip .count { opacity: .7; font-size: .8em; margin-left: .15rem; }
+
+.search-wrap { margin: .6rem 0 1.4rem; max-width: 420px; }
+.search-wrap input {
+  width: 100%; padding: .55rem .8rem; font-size: 1rem;
+  border: 1px solid var(--line); border-radius: .5rem; background: var(--card-bg); color: var(--ink);
+}
+.search-wrap input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+#results-note { font-size: .88rem; color: var(--muted); margin: 0 0 .8rem; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 1.1rem; }
+
+article.card {
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: .8rem;
+  padding: 1.1rem 1.2rem;
+  display: flex; flex-direction: column; gap: .65rem;
+}
+.card-top { display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; }
+.badge {
+  font-size: .72rem; letter-spacing: .04em; text-transform: uppercase;
+  padding: .18rem .55rem; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-weight: 600;
+}
+.badge.safety { background: var(--warn-soft); color: var(--warn); }
+article.card h2 { margin: 0; font-size: 1.12rem; line-height: 1.35; }
+article.card dl { margin: 0; display: flex; flex-direction: column; gap: .55rem; }
+article.card dt {
+  font-size: .72rem; text-transform: uppercase; letter-spacing: .05em;
+  color: var(--muted); font-weight: 700; margin-bottom: .1rem;
+}
+article.card dd { margin: 0; font-size: .93rem; }
+article.card dd a.offsite { color: var(--accent); word-break: break-word; }
+.proof { background: var(--safe); border-radius: .5rem; padding: .5rem .7rem; }
+.verdict { border-left: 3px solid var(--accent); padding-left: .6rem; }
+.verdict.pro { border-left-color: var(--warn); }
+.verdict .label { font-weight: 700; display: inline-block; margin-right: .3rem; }
+.extras { margin: 0; padding-left: 1.1rem; }
+.extras li { font-size: .85rem; color: var(--muted); margin-bottom: .15rem; }
+.recheck { font-size: .78rem; color: var(--muted); border-top: 1px dashed var(--line); padding-top: .45rem; }
+
+.policy {
+  margin-top: 2.2rem; border: 1px solid var(--line); border-radius: .8rem;
+  padding: 1rem 1.2rem; background: var(--card-bg); font-size: .92rem; color: var(--muted);
+}
+.policy h2 { margin: 0 0 .4rem; font-size: 1rem; color: var(--ink); }
+.policy ul { margin: .4rem 0 0; padding-left: 1.2rem; }
+footer.site { border-top: 1px solid var(--line); padding: 1.4rem 1.2rem 2.4rem; max-width: 1080px; margin: 0 auto; font-size: .85rem; color: var(--muted); }
+footer.site a { color: var(--accent); }
+.empty { color: var(--muted); padding: 2rem 0; text-align: center; }
+
+@media print {
+  body { background: #fff; }
+  .search-wrap, .filters { display: none; }
+  .grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <h1>__TITLE__</h1>
+  <p class="tagline">__TAGLINE__</p>
+  <p class="meta-line">
+    Second-edition data rechecked <strong>__LAST_RECHECKED__</strong> &middot; next scheduled recheck dates shown per card
+    &middot; <strong>no affiliate links, ever</strong>
+  </p>
+</header>
+<main>
+  <div class="filters" id="filters" role="group" aria-label="Filter by category"></div>
+  <div class="search-wrap">
+    <label for="search" hidden>Search cards</label>
+    <input id="search" type="search" placeholder="Search: dryer, iPhone, wiring, mend..." autocomplete="off">
+  </div>
+  <p id="results-note" aria-live="polite"></p>
+  <div class="grid" id="grid"></div>
+
+  <section class="policy" id="policy">
+    <h2>The rules this directory plays by</h2>
+    <p>__AFFILIATE_STATEMENT__</p>
+    <ul>
+      <li>__COST_NOTE__</li>
+      <li>__OFFLINE_NOTE__</li>
+    </ul>
+  </section>
+</main>
+<footer class="site">
+  <p>
+    Built by <a href="https://dylanasdale.github.io/">Asdale Dynamics, LLC</a> under the MIT license.
+    If a link goes stale or a formerly-free resource starts charging, the data file records
+    <code>source_checked_date</code> and <code>recheck_date</code> per card so freshening is part of the design.
+    Nothing here is sponsored; no company reviewed its card before publication.
+  </p>
+</footer>
+
+<script id="repair-data" type="application/json">
+__DATA_JSON__
+</script>
+<script id="app-script">
+const DATA = (typeof document !== 'undefined' && document.getElementById('repair-data'))
+  ? JSON.parse(document.getElementById('repair-data').textContent)
+  : null;
+
+const KIND_LABELS = {
+  manual_archive: 'Manual archive',
+  part_diagrams: 'Part diagrams',
+  guides: 'How-to guides',
+  library: 'Library access',
+  recall: 'Recall lookup',
+  safety_guide: 'Safety boundaries'
+};
+
+function escapeHTML(s) {
+  return String(s == null ? '' : s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+
+function categoryById(data) {
+  const map = {};
+  data.categories.forEach((c) => { map[c.id] = c; });
+  return map;
+}
+
+function categoryCounts(cards) {
+  const counts = { all: cards.length };
+  cards.forEach((card) => { counts[card.category] = (counts[card.category] || 0) + 1; });
+  return counts;
+}
+
+function filterCards(cards, category, query) {
+  const q = String(query || '').trim().toLowerCase();
+  return cards.filter((card) => {
+    if (category && category !== 'all' && card.category !== category) return false;
+    if (!q) return true;
+    const haystack = [card.title, card.covers, card.free_proof, card.official_source.name,
+      card.beginner_verdict.text, (card.extras || []).join(' ')].join(' ').toLowerCase();
+    return haystack.includes(q);
+  });
+}
+
+function cardHTML(card, meta) {
+  const cat = meta.categoryById[card.category] || { label: card.category };
+  const verdictLabel = meta.verdictLabels[card.beginner_verdict.label] || card.beginner_verdict.label;
+  const isSafety = card.category === 'safety' || card.beginner_verdict.label === 'pro_territory';
+  const extras = (card.extras || []).map((e) => '<li>' + escapeHTML(e) + '</li>').join('');
+  const badgeClass = card.category === 'safety' || card.category === 'auto' ? 'badge safety' : 'badge';
+  return '<article class="card" id="card-' + escapeHTML(card.id) + '">' +
+    '<div class="card-top">' +
+      '<span class="' + badgeClass + '">' + escapeHTML(cat.label) + '</span>' +
+      '<span class="badge">' + escapeHTML(KIND_LABELS[card.kind] || card.kind) + '</span>' +
+    '</div>' +
+    '<h2>' + escapeHTML(card.title) + '</h2>' +
+    '<dl>' +
+      '<div><dt>What it covers</dt><dd>' + escapeHTML(card.covers) + '</dd></div>' +
+      '<div><dt>Official source</dt><dd>' + escapeHTML(card.official_source.name) +
+        ' &middot; <a class="offsite" href="' + escapeHTML(card.official_source.url) + '">open official site</a></dd></div>' +
+      '<div><dt>Proof it is free</dt><dd class="proof">' + escapeHTML(card.free_proof) + '</dd></div>' +
+      '<div><dt>Beginner verdict</dt><dd class="verdict' + (isSafety ? ' pro' : '') + '">' +
+        '<span class="label">' + escapeHTML(verdictLabel) + ':</span>' + escapeHTML(card.beginner_verdict.text) +
+      '</dd></div>' +
+      (extras ? '<div><dt>Worth knowing</dt><dd><ul class="extras">' + extras + '</ul></dd></div>' : '') +
+      '<div><dt>Recheck schedule</dt><dd class="recheck">Checked ' + escapeHTML(card.source_checked_date) +
+        ' &middot; recheck by ' + escapeHTML(card.recheck_date) + '</dd></div>' +
+    '</dl>' +
+  '</article>';
+}
+
+function filterBarHTML(data, active, counts) {
+  const chips = [{ id: 'all', label: 'All' }].concat(data.categories);
+  return chips.map((c) => {
+    const pressed = active === c.id ? ' true' : ' false';
+    const count = counts[c.id] != null ? counts[c.id] : 0;
+    return '<button type="button" class="chip" aria-pressed="' + pressed.trim() +
+      '" data-category="' + escapeHTML(c.id) + '">' + escapeHTML(c.label) +
+      ' <span class="count">' + count + '</span></button>';
+  }).join('');
+}
+
+if (typeof document !== 'undefined' && document.getElementById('repair-grid')) {
+  (function init() {
+    const meta = { categoryById: categoryById(DATA), verdictLabels: DATA.verdict_labels };
+    let active = 'all';
+    let query = '';
+    const grid = document.getElementById('grid');
+    const filters = document.getElementById('filters');
+    const search = document.getElementById('search');
+    const note = document.getElementById('results-note');
+
+    function renderFilters() {
+      filters.innerHTML = filterBarHTML(DATA, active, categoryCounts(DATA.cards));
+    }
+
+    function renderCards() {
+      const shown = filterCards(DATA.cards, active, query);
+      grid.innerHTML = shown.length
+        ? shown.map((c) => cardHTML(c, meta)).join('')
+        : '<p class="empty">Nothing matched. Try a broader word like "washer", "car" or "mend".</p>';
+      note.textContent = 'Showing ' + shown.length + ' of ' + DATA.cards.length + ' cards.';
+    }
+
+    filters.addEventListener('click', (ev) => {
+      const btn = ev.target.closest('[data-category]');
+      if (!btn) return;
+      active = btn.getAttribute('data-category');
+      renderFilters();
+      renderCards();
+    });
+
+    search.addEventListener('input', () => {
+      query = search.value;
+      renderCards();
+    });
+
+    renderFilters();
+    renderCards();
+  })();
+}
+</script>
+</body>
+</html>

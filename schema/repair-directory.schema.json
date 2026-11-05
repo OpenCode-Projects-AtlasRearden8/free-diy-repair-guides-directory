@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://free-diy-repair-guides-directory/schema/repair-directory.schema.json",
+  "title": "Free DIY Repair Directory dataset",
+  "description": "Schema for the JSON source data of the Free DIY Repair Directory. Copyright (c) 2026 Asdale Dynamics, LLC. MIT licensed.",
+  "type": "object",
+  "required": [
+    "project",
+    "title",
+    "tagline",
+    "dataset_version",
+    "last_rechecked",
+    "policy",
+    "categories",
+    "verdict_labels",
+    "cards"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "project": { "type": "string", "minLength": 1 },
+    "title": { "type": "string", "minLength": 1 },
+    "tagline": { "type": "string", "minLength": 1 },
+    "dataset_version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+    "last_rechecked": { "type": "string", "format": "date" },
+    "policy": {
+      "type": "object",
+      "required": ["affiliate_links", "affiliate_statement", "cost_note", "offline"],
+      "additionalProperties": false,
+      "properties": {
+        "affiliate_links": { "type": "boolean" },
+        "affiliate_statement": { "type": "string", "minLength": 1 },
+        "cost_note": { "type": "string", "minLength": 1 },
+        "offline": { "type": "string", "minLength": 1 }
+      }
+    },
+    "categories": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["id", "label", "description"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z-]+$" },
+          "label": { "type": "string", "minLength": 1 },
+          "description": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "verdict_labels": {
+      "type": "object",
+      "required": ["start_here", "easy_confident", "take_it_slow", "pro_territory"],
+      "additionalProperties": false,
+      "properties": {
+        "start_here": { "type": "string", "minLength": 1 },
+        "easy_confident": { "type": "string", "minLength": 1 },
+        "take_it_slow": { "type": "string", "minLength": 1 },
+        "pro_territory": { "type": "string", "minLength": 1 }
+      }
+    },
+    "cards": {
+      "type": "array",
+      "minItems": 10,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "category",
+          "kind",
+          "covers",
+          "official_source",
+          "free_proof",
+          "beginner_verdict",
+          "recheck_date",
+          "source_checked_date"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "title": { "type": "string", "minLength": 1 },
+          "category": { "type": "string", "enum": ["appliance", "tech", "auto", "home", "safety"] },
+          "kind": {
+            "type": "string",
+            "enum": ["manual_archive", "part_diagrams", "guides", "library", "recall", "safety_guide"]
+          },
+          "covers": { "type": "string", "minLength": 20 },
+          "official_source": {
+            "type": "object",
+            "required": ["name", "url"],
+            "additionalProperties": false,
+            "properties": {
+              "name": { "type": "string", "minLength": 1 },
+              "url": { "type": "string", "pattern": "^https://" }
+            }
+          },
+          "free_proof": { "type": "string", "minLength": 40 },
+          "beginner_verdict": {
+            "type": "object",
+            "required": ["label", "text"],
+            "additionalProperties": false,
+            "properties": {
+              "label": { "type": "string", "enum": ["start_here", "easy_confident", "take_it_slow", "pro_territory"] },
+              "text": { "type": "string", "minLength": 20 }
+            }
+          },
+          "recheck_date": { "type": "string", "format": "date" },
+          "source_checked_date": { "type": "string", "format": "date" },
+          "extras": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 5 }
+          }
+        }
+      }
+    }
+  }
+}

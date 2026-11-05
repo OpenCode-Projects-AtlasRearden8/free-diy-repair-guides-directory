@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- GENERATED FILE - DO NOT EDIT BY HAND.
+     Edit templates/index.template.html and data/repair-directory.json, then run: node build.js -->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free DIY Repair Directory - Official sources, no affiliate links</title>
+<meta name="description" content="A directory of official, genuinely free DIY-repair resources for appliances, tech, cars and clothes - with the proof it is free stated on every card.">
+<style>
+:root {
+  --ink: #2b3138;
+  --muted: #5d6a75;
+  --bg: #faf8f4;
+  --card-bg: #ffffff;
+  --accent: #2f6b4f;
+  --accent-soft: #e3efe7;
+  --line: #e4e0d8;
+  --warn: #a3541f;
+  --warn-soft: #fdf1e4;
+  --safe: #eaf3ee;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.55;
+  font-size: 16px;
+}
+header.site { border-bottom: 1px solid var(--line); padding: 2.4rem 1.2rem 1.6rem; max-width: 1080px; margin: 0 auto; }
+header.site h1 { margin: 0 0 .3rem; font-size: clamp(1.6rem, 4vw, 2.3rem); line-height: 1.2; }
+header.site p.tagline { margin: 0 0 .8rem; color: var(--muted); max-width: 60ch; }
+.meta-line { font-size: .85rem; color: var(--muted); }
+.meta-line strong { color: var(--ink); }
+main { max-width: 1080px; margin: 0 auto; padding: 1.2rem 1.2rem 3rem; }
+
+.filters { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin: 1rem 0 .4rem; }
+.chip {
+  border: 1px solid var(--line);
+  background: var(--card-bg);
+  border-radius: 999px;
+  padding: .4rem .95rem;
+  font-size: .92rem;
+  cursor: pointer;
+  color: var(--ink);
+  transition: background .12s ease, border-color .12s ease;
+}
+.chip:hover { border-color: var(--accent); }
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+.chip .count { opacity: .7; font-size: .8em; margin-left: .15rem; }
+
+.search-wrap { margin: .6rem 0 1.4rem; max-width: 420px; }
+.search-wrap input {
+  width: 100%; padding: .55rem .8rem; font-size: 1rem;
+  border: 1px solid var(--line); border-radius: .5rem; background: var(--card-bg); color: var(--ink);
+}
+.search-wrap input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+#results-note { font-size: .88rem; color: var(--muted); margin: 0 0 .8rem; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 1.1rem; }
+
+article.card {
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: .8rem;
+  padding: 1.1rem 1.2rem;
+  display: flex; flex-direction: column; gap: .65rem;
+}
+.card-top { display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; }
+.badge {
+  font-size: .72rem; letter-spacing: .04em; text-transform: uppercase;
+  padding: .18rem .55rem; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-weight: 600;
+}
+.badge.safety { background: var(--warn-soft); color: var(--warn); }
+article.card h2 { margin: 0; font-size: 1.12rem; line-height: 1.35; }
+article.card dl { margin: 0; display: flex; flex-direction: column; gap: .55rem; }
+article.card dt {
+  font-size: .72rem; text-transform: uppercase; letter-spacing: .05em;
+  color: var(--muted); font-weight: 700; margin-bottom: .1rem;
+}
+article.card dd { margin: 0; font-size: .93rem; }
+article.card dd a.offsite { color: var(--accent); word-break: break-word; }
+.proof { background: var(--safe); border-radius: .5rem; padding: .5rem .7rem; }
+.verdict { border-left: 3px solid var(--accent); padding-left: .6rem; }
+.verdict.pro { border-left-color: var(--warn); }
+.verdict .label { font-weight: 700; display: inline-block; margin-right: .3rem; }
+.extras { margin: 0; padding-left: 1.1rem; }
+.extras li { font-size: .85rem; color: var(--muted); margin-bottom: .15rem; }
+.recheck { font-size: .78rem; color: var(--muted); border-top: 1px dashed var(--line); padding-top: .45rem; }
+
+.policy {
+  margin-top: 2.2rem; border: 1px solid var(--line); border-radius: .8rem;
+  padding: 1rem 1.2rem; background: var(--card-bg); font-size: .92rem; color: var(--muted);
+}
+.policy h2 { margin: 0 0 .4rem; font-size: 1rem; color: var(--ink); }
+.policy ul { margin: .4rem 0 0; padding-left: 1.2rem; }
+footer.site { border-top: 1px solid var(--line); padding: 1.4rem 1.2rem 2.4rem; max-width: 1080px; margin: 0 auto; font-size: .85rem; color: var(--muted); }
+footer.site a { color: var(--accent); }
+.empty { color: var(--muted); padding: 2rem 0; text-align: center; }
+
+@media print {
+  body { background: #fff; }
+  .search-wrap, .filters { display: none; }
+  .grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <h1>Free DIY Repair Directory</h1>
+  <p class="tagline">Official, genuinely free places to learn how to fix your own appliances, gadgets, cars and clothes — with the proof of free included on every card.</p>
+  <p class="meta-line">
+    Second-edition data rechecked <strong>2026-11-05</strong> &middot; next scheduled recheck dates shown per card
+    &middot; <strong>no affiliate links, ever</strong>
+  </p>
+</header>
+<main>
+  <div class="filters" id="filters" role="group" aria-label="Filter by category"></div>
+  <div class="search-wrap">
+    <label for="search" hidden>Search cards</label>
+    <input id="search" type="search" placeholder="Search: dryer, iPhone, wiring, mend..." autocomplete="off">
+  </div>
+  <p id="results-note" aria-live="polite"></p>
+  <div class="grid" id="grid"></div>
+
+  <section class="policy" id="policy">
+    <h2>The rules this directory plays by</h2>
+    <p>Every link on this page goes straight to the official organization's own website. This directory earns no commissions, contains no affiliate or tracking parameters, and never suggests a purchase.</p>
+    <ul>
+      <li>Free here means the instructions, manuals, diagrams or recall data. Replacement parts are a separate, always-optional cost.</li>
+      <li>This page is a single HTML file. Save it anywhere and open it without internet; the data travels with it.</li>
+    </ul>
+  </section>
+</main>
+<footer class="site">
+  <p>
+    Built by <a href="https://dylanasdale.github.io/">Asdale Dynamics, LLC</a> under the MIT license.
+    If a link goes stale or a formerly-free resource starts charging, the data file records
+    <code>source_checked_date</code> and <code>recheck_date</code> per card so freshening is part of the design.
+    Nothing here is sponsored; no company reviewed its card before publication.
+  </p>
+</footer>
+
+<script id="repair-data" type="application/json">
+{"project":"free-diy-repair-guides-directory","title":"Free DIY Repair Directory","tagline":"Official, genuinely free places to learn how to fix your own appliances, gadgets, cars and clothes — with the proof of free included on every card.","dataset_version":"1.0.0","last_rechecked":"2026-11-05","policy":{"affiliate_links":false,"affiliate_statement":"Every link on this page goes straight to the official organization's own website. This directory earns no commissions, contains no affiliate or tracking parameters, and never suggests a purchase.","cost_note":"Free here means the instructions, manuals, diagrams or recall data. Replacement parts are a separate, always-optional cost.","offline":"This page is a single HTML file. Save it anywhere and open it without internet; the data travels with it."},"categories":[{"id":"appliance","label":"Appliance","description":"Manuals, part diagrams and how-to help for washers, dryers, fridges, ranges and dishwashers."},{"id":"tech","label":"Tech","description":"Phone, laptop and gadget repair guides, including official manufacturer service manuals."},{"id":"auto","label":"Auto","description":"Car repair libraries, recall lookups and maintenance help."},{"id":"home","label":"Home","description":"Sewing, mending and household basics from universities and manufacturers."},{"id":"safety","label":"Safety & Recalls","description":"Recall checks, government data, and the boundaries where DIY should stop and a pro should take over."}],"verdict_labels":{"start_here":"Start here","easy_confident":"Easy with a little care","take_it_slow":"Take it slow","pro_territory":"Pro territory"},"cards":[{"id":"ge-appliance-manuals","title":"GE Appliances Owner Support: Manuals & Diagrams","category":"appliance","kind":"manual_archive","covers":"Free owner's manuals and installation instructions for GE, Hotpoint and Cafe appliances — fridges, dishwashers, ovens, washers and dryers — plus the same official pages that carry part lists.","official_source":{"name":"GE Appliances (manufacturer)","url":"https://www.geappliances.com/owner-support/"},"free_proof":"Manuals and installation guides download free straight from GE's own support site, with no account or payment. GE is the manufacturer, so this is the primary source — not a middleman reselling scanned documents.","beginner_verdict":{"label":"start_here","text":"Start here if you own a GE appliance. Knowing the model's intended behavior is the safest first step before loosening any screw."},"recheck_date":"2027-05-01","source_checked_date":"2026-11-05","extras":["Also covers Monogram and GE water heater lines.","Have your model number ready — a sticker inside the door or on the back."]},{"id":"whirlpool-owner-center","title":"Whirlpool Owner Center: Brand-Official Manuals","category":"appliance","kind":"manual_archive","covers":"Free owner's manuals, care guides and how-to articles for Whirlpool, Maytag, KitchenAid, JennAir and Amana, all published by the brands' parent company.","official_source":{"name":"Whirlpool Corporation (manufacturer)","url":"https://www.whirlpool.com/owners-center.html"},"free_proof":"Every manual is a free download from Whirlpool's official owner center; the company publishes them so owners can service their own machines.","beginner_verdict":{"label":"easy_confident","text":"Easy with a little care: search your model number, skim the troubleshooting table first, then attempt the fix it describes."},"recheck_date":"2027-05-01","source_checked_date":"2026-11-05","extras":["One archive covers five of the most common appliance brands."]},{"id":"samsung-support-downloads","title":"Samsung Support: Free Downloads & Manuals","category":"appliance","kind":"manual_archive","covers":"Free manuals, firmware and troubleshooting guides for Samsung washers, fridges, dishwashers, TVs and phones — current models plus many older ones still listed.","official_source":{"name":"Samsung Electronics (manufacturer)","url":"https://www.samsung.com/us/support/downloads/"},"free_proof":"Samsung hosts current and legacy manuals free under its official Support > Downloads section; downloads start without creating an account.","beginner_verdict":{"label":"easy_confident","text":"Easy with a little care, and it doubles as a tech archive: the same page covers phones, so you get two resource types in one place."},"recheck_date":"2027-05-01","source_checked_date":"2026-11-05","extras":["Legacy model pages still load — useful for a 10-year-old washer."]},{"id":"sears-partsdirect","title":"Sears PartsDirect: Exploded-View Part Diagrams","category":"appliance","kind":"part_diagrams","covers":"Exploded-view diagrams for thousands of appliance models: every part pictured, named and numbered, so you can see how a washer comes apart before you touch it.","official_source":{"name":"Sears PartsDirect (official parts retailer + aftermarket)","url":"https://www.searspartsdirect.com/"},"free_proof":"Browsing diagrams, model pages and their repair guides is free — no membership. You only pay if you decide to order a physical part.","beginner_verdict":{"label":"easy_confident","text":"Easy with a little care: enter a model number, study the diagram, and decide whether the repair is within reach before spending anything."},"recheck_date":"2027-05-01","source_checked_date":"2026-11-05","extras":["Diagrams and guides are free; parts are the optional paid piece."]},{"id":"appliancepartspros","title":"AppliancePartsPros: Diagrams + How-To Videos","category":"appliance","kind":"part_diagrams","covers":"Free exploded-view diagrams for washers, dryers, fridges, ranges and dishwashers, paired with thousands of short videos showing the actual disassembly for common repairs.","official_source":{"name":"AppliancePartsPros (parts retailer with free repair library)","url":"https://www.appliancepartspros.com/"},"free_proof":"Diagrams, symptom guides and how-to videos are free to view; payment happens only if you order a part from them.","beginner_verdict":{"label":"easy_confident","text":"Easy with a little care: the videos show the whole fix start to finish, so pause, rewatch and follow along with the machine unplugged."},"recheck_date":"2027-05-01","source_checked_date":"2026-11-05","extras":["Look for the 'Repair Video' flag on a part or model's page."]},{"id":"repairclinic-guides","title":"RepairClinic: Symptom-to-Fix DIY Library","category":"appliance","kind":"guides","covers":"A free library that turns 'my fridge is making noise' into the likely part and the repair steps, for appliances, HVAC and small engines, with model-specific how-to videos.","official_source":{"name":"RepairClinic (independent repair-resource site)","url":"https://www.repairclinic.com/"},"free_proof":"The symptom pages, repair help and thousands of instruction videos are viewable free; no subscription is required to learn how to do the fix.","beginner_verdict":{"label":"take_it_slow","text":"Take it slow: symptom-based advice is a good starting diagnosis, but confirm the part with your model's diagram before ordering anything."},"recheck_date":"2027-05-01","source_checked_date":"2026-11-05","extras":["Unplug or disconnect water and gas lines before opening anything."]},{"id":"ifixit-guides","title":"iFixit Repair Guides (Phones, Laptops & More)","category":"tech","kind":"guides","covers":"Free, community-tested, step-by-step guides for iPhones, Android phones, laptops, tablets, game consoles and gadgets, with photos of every screw, snap and connector.","official_source":{"name":"iFixit (B Corp; publishes open repair manuals)","url":"https://www.ifixit.com/Guide"},"free_proof":"Guides are free to read, forever. iFixit sells optional tools and parts, but the instructions themselves are never paywalled — that is their stated mission.","beginner_verdict":{"label":"start_here","text":"Start here: search your exact model ('iPhone 13 battery replacement') and the step photos make the repair feel surprisingly doable."},"recheck_date":"2027-05-01","source_checked_date":"2026-11-05","extras":["Read the 'difficulty' and warning blurb at the top of any guide first.","Their free teardowns show what is inside a device before you buy it."]},{"id":"apple-self-service-repair","title":"Apple Self Service Repair: Official Service Manuals","category":"tech","kind":"manual_archive","covers":"Official service manuals — hundreds of pages of genuine Apple procedures — plus genuine part ordering options for iPhone, MacBook, iMac and other Apple products.","official_source":{"name":"Apple Inc. (manufacturer)","url":"https://support.apple.com/self-service-repair"},"free_proof":"Apple publishes the repair manuals as free downloads from its own support site; the parts store is optional and the decades of manuals cost nothing.","beginner_verdict":{"label":"take_it_slow","text":"Take it slow: these manuals are thorough but written with technician-level care. Try the friendlier iFixit steps for the same fix first, then cross-check here."},"recheck_date":"2027-05-01","source_checked_date":"2026-11-05","extras":["A tiny adhesive or a bent cable is the usual villain in laptop repairs."]},{"id":"framework-repair-guides","title":"Framework: Official Laptop Repair Guides","category":"tech","kind":"manual_archive","covers":"Official, full teardown-and-replace guides for Framework laptops — RAM, SSD, battery, keyboard, screen, port modules — designed so owners do exactly what technicians do.","official_source":{"name":"Framework (manufacturer)","url":"https://guides.frame.work/"},"free_proof":"Every repair guide is free on Framework's official site; the company builds laptops to be user-repairable and publishes its documentation openly.","beginner_verdict":{"label":"start_here","text":"Start here: this is the friendliest laptop-repair source anywhere, with standard Phillips screws and no knowledge assumed."},"recheck_date":"2027-05-01","source_checked_date":"2026-11-05","extras":["Great first-repair candidate: a RAM or storage upgrade with one screwdriver."]},{"id":"chilton-library","title":"ChiltonLibrary: Free with Your Library Card","category":"auto","kind":"library","covers":"The full Chilton auto-repair manuals — step-by-step procedures, wiring diagrams, torque specs and maintenance schedules — for decades of car, truck and SUV models.","official_source":{"name":"ChiltonLibrary (Gale, a Cengage company)","url":"https://www.gale.com/databases/chilton-library"},"free_proof":"ChiltonLibrary is a paid database, but public libraries subscribe and cardholders use it free. Look for it on your library's website under 'A–Z databases' or 'Auto repair'.","beginner_verdict":{"label":"easy_confident","text":"Easy with a little care: search by year, make and model. The wording is technician-grade, so read one step at a time and follow exactly."},"recheck_date":"2027-05-01","source_checked_date":"2026-11-05","extras":["No library card yet? Most US libraries issue one free at the desk in minutes."]},{"id":"autozone-repair-guides","title":"AutoZone DIY Repair Guides","category":"auto","kind":"guides","covers":"Free guides for common car jobs — brakes, batteries, belts, fluids, wipers — plus check-engine-light code lookup by year, make and model.","official_source":{"name":"AutoZone (retailer with free DIY resource section)","url":"https://www.autozone.com/diy/repair-guides"},"free_proof":"Published free on AutoZone's official DIY section; reading the guides requires nothing beyond the website, even though the company obviously hopes you buy parts.","beginner_verdict":{"label":"easy_confident","text":"Easy with a little care: the most common fixes (battery, air filter, wipers, bulbs) are genuinely beginner-friendly here."},"recheck_date":"2027-05-01","source_checked_date":"2026-11-05","extras":["Their free code-reading service at many stores can point to the actual issue."]},{"id":"nhtsa-recalls","title":"NHTSA Recall Search and Vehicle Safety Data","category":"auto","kind":"recall","covers":"Free lookup of US vehicle recalls, open investigations and complaints by VIN or make/model — including whether the manufacturer's fix is free at a dealer.","official_source":{"name":"NHTSA (US Dept. of Transportation)","url":"https://www.nhtsa.gov/recalls"},"free_proof":"It is a federal government service: recall and safety data is public, and the VIN search is free with no registration.","beginner_verdict":{"label":"start_here","text":"Start here before any car repair: a recalled part might be replaced free at the dealer, turning a scary diagnostic into a free fix."},"recheck_date":"2027-05-01","source_checked_date":"2026-11-05","extras":["Your VIN is visible through the windshield on the driver's side."]},{"id":"singer-machine-manuals","title":"SINGER / PFAFF / Husqvarna Viking: Free Machine Manuals","category":"home","kind":"manual_archive","covers":"Free, model-specific PDF manuals for SINGER, PFAFF and HUSQVARNA VIKING sewing machines — threading diagrams, tension fixes, bobbin troubleshooting and routine maintenance.","official_source":{"name":"SINGER (SVP Worldwide, manufacturer)","url":"https://www.singer.com/pages/product-manuals-for-singer-pfaff-and-husqvarna-viking-sewing-machines"},"free_proof":"The official page states plainly: 'Download free, model-specific PDF guides … for setup, maintenance and troubleshooting.' Singer also confirms manuals are 'exclusively online for free download.'","beginner_verdict":{"label":"start_here","text":"Start here: threading and tension problems cause most 'broken' sewing machines, and the manual's diagrams solve both in minutes."},"recheck_date":"2027-05-01","source_checked_date":"2026-11-05","extras":["Model number is printed on the machine — usually the body or plate near the needle arm."]},{"id":"uk-clothing-repair-guide","title":"Clothing Repair Guide (University Extension, Free PDF)","category":"home","kind":"guides","covers":"A plain-language university extension publication on 'to mend or not to mend': judging the damage, assembling a simple mending kit, patching, split seams, loose hems, buttons and reinforcements.","official_source":{"name":"University of Kentucky Cooperative Extension Service","url":"https://fcs.mgcafe.uky.edu/sites/fcs.mgcafe.uky.edu/files/ct-mmb-147.pdf"},"free_proof":"State university extension publications are free educational documents — no purchase, subscription or account, produced for the public.","beginner_verdict":{"label":"start_here","text":"Start here: it is short enough to read in one sitting and matches exactly what a beginner mending box actually needs."},"recheck_date":"2027-05-01","source_checked_date":"2026-11-05","extras":["Pairs nicely with a machine manual when a repair needs machine stitching."]},{"id":"unh-sewing-basics","title":"Sewing for Beginners (4-H Extension, Free PDF)","category":"home","kind":"guides","covers":"A longer free 4-H publication covering tools, hand stitches, machine threading, seams, hems and simple projects — the practical basics that make mending feel routine.","official_source":{"name":"University of New Hampshire Cooperative Extension (4-H)","url":"https://extension.unh.edu/sites/default/files/migrated_unmanaged_files/Resource004455_Rep6349.pdf"},"free_proof":"An official UNH Extension resource, downloadable as a free PDF from the university's own site.","beginner_verdict":{"label":"start_here","text":"Start here when you want more than a one-page answer: it teaches the underlying skills, not just one trick."},"recheck_date":"2027-05-01","source_checked_date":"2026-11-05","extras":["The stitches section doubles as hand-mending reference for clothes that never see a machine."]},{"id":"cpsc-recalls","title":"CPSC Recall Search (Products Safety)","category":"safety","kind":"recall","covers":"Free search of US consumer-product recalls — fridges, dehumidifiers, space heaters, chargers, smoke detectors and more — including free repair kits, refunds or replacements offered by makers.","official_source":{"name":"US Consumer Product Safety Commission (federal agency)","url":"https://www.cpsc.gov/Recalls"},"free_proof":"Federal agency: recall data is public and free, and the agency is the authoritative source for product-safety notices.","beginner_verdict":{"label":"start_here","text":"Start here before any appliance fix: if the problem is a recalled part, the manufacturer may repair or replace it free — that is a better deal than DIY."},"recheck_date":"2027-05-01","source_checked_date":"2026-11-05","extras":["Recalled dehumidifiers and space heaters are recurring fire risks."]},{"id":"recalls-portal","title":"Recalls.gov: One Door for All US Recall Data","category":"safety","kind":"recall","covers":"The federal portal that hands off to the right agency across appliances (CPSC), vehicles and child restraints (NHTSA), food and drugs, and more.","official_source":{"name":"US Government interagency recall portal","url":"https://www.recalls.gov/"},"free_proof":"Government-run portal; all data behind it is public and free of charge.","beginner_verdict":{"label":"start_here","text":"Start here when you are unsure which agency covers the item: one search avoids guessing between federal websites."},"recheck_date":"2027-05-01","source_checked_date":"2026-11-05","extras":["Use CPSC's site directly for appliance detail; this portal is the front door."]},{"id":"repair-boundaries","title":"When Repair Gets Scary: Pro-Territory Boundaries","category":"safety","kind":"safety_guide","covers":"The DIY stopping lines: anything with natural or propane gas; electrical panel or wiring work; power near water; refrigerant; structural items; and anything behind a recall notice that involves gas or electrics.","official_source":{"name":"NFPA (National Fire Protection Association) — consumer safety education","url":"https://www.nfpa.org/education-and-research"},"free_proof":"NFPA publishes consumer-facing safety education free on its site; the Electrical Safety Foundation (ESFI) and utility safety pages are likewise free to the public.","beginner_verdict":{"label":"pro_territory","text":"Pro territory: smelling gas, panel upgrades, damaged wiring and refrigerant are for licensed pros. Knowing when to stop is a beginner skill that beats heroics — every time."},"recheck_date":"2027-05-01","source_checked_date":"2026-11-05","extras":["Smell gas? Leave the area and call your utility's emergency line from outside.","ESFI (esfi.org) is a good second source on electrical safety.","Unplug before opening; discharge and follow device-specific guides first."]}]}
+</script>
+<script id="app-script">
+const DATA = (typeof document !== 'undefined' && document.getElementById('repair-data'))
+  ? JSON.parse(document.getElementById('repair-data').textContent)
+  : null;
+
+const KIND_LABELS = {
+  manual_archive: 'Manual archive',
+  part_diagrams: 'Part diagrams',
+  guides: 'How-to guides',
+  library: 'Library access',
+  recall: 'Recall lookup',
+  safety_guide: 'Safety boundaries'
+};
+
+function escapeHTML(s) {
+  return String(s == null ? '' : s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+
+function categoryById(data) {
+  const map = {};
+  data.categories.forEach((c) => { map[c.id] = c; });
+  return map;
+}
+
+function categoryCounts(cards) {
+  const counts = { all: cards.length };
+  cards.forEach((card) => { counts[card.category] = (counts[card.category] || 0) + 1; });
+  return counts;
+}
+
+function filterCards(cards, category, query) {
+  const q = String(query || '').trim().toLowerCase();
+  return cards.filter((card) => {
+    if (category && category !== 'all' && card.category !== category) return false;
+    if (!q) return true;
+    const haystack = [card.title, card.covers, card.free_proof, card.official_source.name,
+      card.beginner_verdict.text, (card.extras || []).join(' ')].join(' ').toLowerCase();
+    return haystack.includes(q);
+  });
+}
+
+function cardHTML(card, meta) {
+  const cat = meta.categoryById[card.category] || { label: card.category };
+  const verdictLabel = meta.verdictLabels[card.beginner_verdict.label] || card.beginner_verdict.label;
+  const isSafety = card.category === 'safety' || card.beginner_verdict.label === 'pro_territory';
+  const extras = (card.extras || []).map((e) => '<li>' + escapeHTML(e) + '</li>').join('');
+  const badgeClass = card.category === 'safety' || card.category === 'auto' ? 'badge safety' : 'badge';
+  return '<article class="card" id="card-' + escapeHTML(card.id) + '">' +
+    '<div class="card-top">' +
+      '<span class="' + badgeClass + '">' + escapeHTML(cat.label) + '</span>' +
+      '<span class="badge">' + escapeHTML(KIND_LABELS[card.kind] || card.kind) + '</span>' +
+    '</div>' +
+    '<h2>' + escapeHTML(card.title) + '</h2>' +
+    '<dl>' +
+      '<div><dt>What it covers</dt><dd>' + escapeHTML(card.covers) + '</dd></div>' +
+      '<div><dt>Official source</dt><dd>' + escapeHTML(card.official_source.name) +
+        ' &middot; <a class="offsite" href="' + escapeHTML(card.official_source.url) + '">open official site</a></dd></div>' +
+      '<div><dt>Proof it is free</dt><dd class="proof">' + escapeHTML(card.free_proof) + '</dd></div>' +
+      '<div><dt>Beginner verdict</dt><dd class="verdict' + (isSafety ? ' pro' : '') + '">' +
+        '<span class="label">' + escapeHTML(verdictLabel) + ':</span>' + escapeHTML(card.beginner_verdict.text) +
+      '</dd></div>' +
+      (extras ? '<div><dt>Worth knowing</dt><dd><ul class="extras">' + extras + '</ul></dd></div>' : '') +
+      '<div><dt>Recheck schedule</dt><dd class="recheck">Checked ' + escapeHTML(card.source_checked_date) +
+        ' &middot; recheck by ' + escapeHTML(card.recheck_date) + '</dd></div>' +
+    '</dl>' +
+  '</article>';
+}
+
+function filterBarHTML(data, active, counts) {
+  const chips = [{ id: 'all', label: 'All' }].concat(data.categories);
+  return chips.map((c) => {
+    const pressed = active === c.id ? ' true' : ' false';
+    const count = counts[c.id] != null ? counts[c.id] : 0;
+    return '<button type="button" class="chip" aria-pressed="' + pressed.trim() +
+      '" data-category="' + escapeHTML(c.id) + '">' + escapeHTML(c.label) +
+      ' <span class="count">' + count + '</span></button>';
+  }).join('');
+}
+
+if (typeof document !== 'undefined' && document.getElementById('repair-grid')) {
+  (function init() {
+    const meta = { categoryById: categoryById(DATA), verdictLabels: DATA.verdict_labels };
+    let active = 'all';
+    let query = '';
+    const grid = document.getElementById('grid');
+    const filters = document.getElementById('filters');
+    const search = document.getElementById('search');
+    const note = document.getElementById('results-note');
+
+    function renderFilters() {
+      filters.innerHTML = filterBarHTML(DATA, active, categoryCounts(DATA.cards));
+    }
+
+    function renderCards() {
+      const shown = filterCards(DATA.cards, active, query);
+      grid.innerHTML = shown.length
+        ? shown.map((c) => cardHTML(c, meta)).join('')
+        : '<p class="empty">Nothing matched. Try a broader word like "washer", "car" or "mend".</p>';
+      note.textContent = 'Showing ' + shown.length + ' of ' + DATA.cards.length + ' cards.';
+    }
+
+    filters.addEventListener('click', (ev) => {
+      const btn = ev.target.closest('[data-category]');
+      if (!btn) return;
+      active = btn.getAttribute('data-category');
+      renderFilters();
+      renderCards();
+    });
+
+    search.addEventListener('input', () => {
+      query = search.value;
+      renderCards();
+    });
+
+    renderFilters();
+    renderCards();
+  })();
+}
+</script>
+</body>
+</html>
